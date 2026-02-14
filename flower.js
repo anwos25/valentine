@@ -71,11 +71,35 @@
 	].forEach((o) => CreateMagicDust(...o));
 
 })();
-<script>
-const flowerBtn = document.getElementById("showFlowerBtn");
-const flowerSection = document.getElementById("flowerSection");
+const messages = [
+  "อุ้มรักแบมที่สุดในโลก 💕",
+  "ต่อให้งอนกันอีกกี่ครั้ง ก็ยังเลือกกันอยู่ดี",
+  "แบมคือเจ้าหญิงของอุ้ม 👑",
+  "อยู่ข้างกันแบบนี้ไปนาน ๆ นะ",
+  "ขอบคุณที่ไม่เคยทิ้งกัน 💗",
+  "รักทุกเวอร์ชันของแบมเลยนะ",
+  "ไปกินช็อกโกแลตปั่นด้วยกันอีกนะ 🍫✨"
+];
 
-flowerBtn.addEventListener("click", () => {
-  flowerSection.style.display = "block";
-});
-</script>
+// 👉 เพิ่มข้อความเองตรงนี้ได้เลย
+// ใส่เพิ่มใน array ด้านบนได้ไม่จำกัด
+
+const floatingArea = document.getElementById("floatingArea");
+
+function createLoveText(){
+  const text = document.createElement("div");
+  text.classList.add("love-text");
+
+  text.innerText = messages[Math.floor(Math.random() * messages.length)];
+
+  text.style.left = Math.random() * 80 + "%";
+  text.style.animationDuration = (6 + Math.random() * 4) + "s";
+
+  floatingArea.appendChild(text);
+
+  setTimeout(() => {
+    text.remove();
+  }, 10000);
+}
+
+setInterval(createLoveText, 1200);
