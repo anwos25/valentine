@@ -43,17 +43,15 @@
           <div class="heartFive"><div class="left-side"></div><div class="right-side"></div></div>
         </div>
 
-        <div class="text">
+      <div class="text">
   <span>อุ้มรักแบมที่สุดเยย 💕</span>
 </div>
-
 <button id="flowerBtn" class="flower-btn">
   ดูดอกไม้ของเรา 🌸
 </button>
-
       </div>
-
       <p class="hover">กดดูข้อความสิจ๊ะ 💕</p>
+
     </div>
 <div class="floating-hearts"></div>
 
@@ -103,19 +101,22 @@ noBtn.addEventListener("touchstart", moveNoButton);
 const card = document.querySelector(".valentines-day-card");
 const flowerBtn = document.getElementById("flowerBtn");
 
-flowerBtn.style.display = "none";
-
 card.addEventListener("scroll", () => {
-  if(card.scrollTop + card.clientHeight >= card.scrollHeight - 5){
-    flowerBtn.style.display = "block";
+  const isAtBottom =
+    Math.ceil(card.scrollTop + card.clientHeight) >= card.scrollHeight;
+
+  if (isAtBottom) {
+    flowerBtn.classList.add("show");
+  } else {
+    flowerBtn.classList.remove("show");
   }
 });
 
 flowerBtn.addEventListener("click", () => {
-  window.location.href = "flower.html";
+  window.location.href = "bouquet.html";
 });
-
 </script>
+
 
 
 </body>

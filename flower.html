@@ -132,6 +132,23 @@ function createSparkle() {
 // สร้างใหม่ทุก 400ms
 setInterval(createSparkle, 400);
 </script>
+<script>
+const scrollBox = document.querySelector(".valentines-day-card");
+const flowerBtn = document.getElementById("flowerBtn");
+
+flowerBtn.classList.remove("show"); // กันพลาด
+
+scrollBox.addEventListener("scroll", function() {
+
+  const scrollPosition = scrollBox.scrollTop + scrollBox.clientHeight;
+  const bottom = scrollBox.scrollHeight;
+
+  if (scrollPosition >= bottom - 2) {
+    flowerBtn.classList.add("show");
+  }
+
+});
+</script>
 
 </body>
 </html>

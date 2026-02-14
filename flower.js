@@ -102,4 +102,20 @@ function createLoveText(){
   }, 10000);
 }
 
-setInterval(createLoveText, 1200);
+setInterval(createLoveText, 1200);<script>
+const scrollBox = document.querySelector(".valentines-day-card");
+const flowerBtn = document.getElementById("flowerBtn");
+
+flowerBtn.classList.remove("show"); // กันพลาด
+
+scrollBox.addEventListener("scroll", function() {
+
+  const scrollPosition = scrollBox.scrollTop + scrollBox.clientHeight;
+  const bottom = scrollBox.scrollHeight;
+
+  if (scrollPosition >= bottom - 2) {
+    flowerBtn.classList.add("show");
+  }
+
+});
+</script>

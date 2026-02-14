@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ดอกไม้ของเรา 🌼</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+.apology{
+  position:absolute;
+  bottom:60px;
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+
+  font-size:22px;
+  font-weight:600;
+  color:#991f31;
+
+  /* 🌸 bloom glow ไม่มีพื้นหลัง */
+  text-shadow:
+    0 0 5px rgba(255,255,255,0.9),
+    0 0 15px rgba(255,200,220,0.9),
+    0 0 30px rgba(255,170,200,0.8),
+    0 0 60px rgba(255,150,190,0.6);
+
+  animation: fadeInUp 2s ease forwards, textGlow 3s ease-in-out infinite;
+  opacity:1;
+}
+
+@keyframes textGlow{
+  0%{
+    text-shadow:
+      0 0 5px rgba(255,255,255,0.9),
+      0 0 15px rgba(255,200,220,0.9),
+      0 0 30px rgba(255,170,200,0.8),
+      0 0 60px rgba(255,150,190,0.6);
+  }
+  50%{
+    text-shadow:
+      0 0 8px rgba(255,255,255,1),
+      0 0 25px rgba(255,200,220,1),
+      0 0 50px rgba(255,170,200,0.9),
+      0 0 90px rgba(255,150,190,0.8);
+  }
+  100%{
+    text-shadow:
+      0 0 5px rgba(255,255,255,0.9),
+      0 0 15px rgba(255,200,220,0.9),
+      0 0 30px rgba(255,170,200,0.8),
+      0 0 60px rgba(255,150,190,0.6);
+  }
+}
+
+
+body{
+  height:100vh;
+  background:#f5efe6;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  font-family:'Mali', cursive;
+  position:relative;
+}
+
+/* 🌸 Bloom Glow */
+.bloom{
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background: radial-gradient(circle,
+    rgba(255,200,220,0.7) 0%,
+    rgba(255,200,220,0.4) 30%,
+    rgba(255,200,220,0.1) 55%,
+    transparent 70%);
+  animation: pulse 3s ease-in-out infinite;
+  z-index:0;
+}
+
+@keyframes pulse{
+  0%{ transform:scale(0.9); opacity:0.7;}
+  50%{ transform:scale(1.15); opacity:1;}
+  100%{ transform:scale(0.9); opacity:0.7;}
+}
+
+/* 🌼 bouquet */
+.bouquet{
+  width:320px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 25px 30px rgba(0,0,0,0.25));
+  z-index:2;
+}
+
+@keyframes float{
+  0%{ transform: translateY(0);}
+  50%{ transform: translateY(-18px);}
+  100%{ transform: translateY(0);}
+}
+
+/* ✨ Sparkle */
+.sparkle{
+  position:absolute;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:white;
+  box-shadow:
+    0 0 8px white,
+    0 0 20px #fff,
+    0 0 35px rgba(255,200,230,0.8);
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+  0%,100%{opacity:0;}
+  50%{opacity:1;}
+}
+
+/* 💌 floating text */
+.love-text{
+  position:absolute;
+  color:#c96b84;
+  font-weight:600;
+  font-size:22px;
+  animation: rise 4s linear forwards;
+  white-space:nowrap;
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.9),
+    0 0 20px rgba(255,200,230,0.7);
+}
+
+@keyframes rise{
+  0%{
+    transform:translateY(0) scale(0.9);
+    opacity:0;
+  }
+  10%{
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-220px) scale(1.05);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bloom"></div>
+
+<img src="bouquet.png" class="bouquet">
+<div class="apology">
+  ขอโทษที่ให้ดอกไม้จริงๆไม่ได้นะครับ 🌼
+</div>
+<script>
+
+/* 💖 แก้คำตรงนี้เพิ่มเองได้เลย */
+const loveWords = [
+    "รักแบมที่สุดในโลกเยยยย 💕",
+  "เจ้าหญิงของอุ้มตลอดไป 👑",
+  "งอนเก่งแต่ก็รักเก่งเหมือนกันนะ 😝💗",
+  "คนโปรดของเค้าไม่มีวันเปลี่ยน 💞",
+  "ยิ้มของแบมคือความสุขของอุ้ม ☀️",
+  "อยู่ข้างกันแบบนี้ไปนาน ๆ นะ 💌",
+  "ทะเลาะกันได้ แต่ห้ามหายไปไหนนะ 🤍",
+  "เกิดมาเพื่อเป็นความรักของอุ้มเลยนะ 🎂💘",
+  "15.01.2548 วันสำคัญของหัวใจอุ้ม 🥹",
+  "หมี่ขาวน้ำตกเนื้อพิเศษก็ยังไม่พิเศษเท่าแบม 🍜💖",
+  "ช็อกโกแลตปั่นยังแพ้ความหวานของแบม 🍫✨",
+  "สีจมปูวววว 💗",
+  "คนนี้แหละ ไม่เปลี่ยนใจแล้วว 💘",
+  "รักในทุกเวอร์ชันของแบมเลยนะ 🫶",
+  "ดื้อก็รัก งอนก็รัก น่ารักก็ยิ่งรัก 💕",
+  "โลกนี้มีแบมคนเดียวก็พอแล้วสำหรับอุ้ม 🌎",
+  "อยู่เป็นรอยยิ้มของกันและกันไปเรื่อย ๆ นะ 🌸",
+  "จับมือกันแบบนี้ไปทุกปีเลยนะ 🤝💖",
+  "แบมคือของขวัญที่ดีที่สุดของชีวิต 🎁",
+  "ถ้าวันไหนแบมงอน อุ้มก็จะง้อเสมอจนกว่าจะหาย",
+  "ไม่มีใครแทนที่แบมได้เลยนะ 💗",
+  "ตั้งแต่ 15 มกราคม 2548 โลกก็ไม่เหมือนเดิมอีกเลย ✨",
+   "🍫 ทิวลี่ลูกบอล",
+  "🍫 ป๊อกกาแลต",
+  "🧡 ชาไทย",
+  "🧋 ชานมเฉาก๊วย",
+  "🍓 เบอร์รี่",
+  "🍫 ช็อกโกแลตปั่น",
+  "🍜 หมี่ขาวน้ำตกเนื้อพิเศษ",
+  "🍰 เค้ก",
+  "🐱 ค่าแมวของแบม",
+  "👑 เจ้าหงิงแบมมม",
+  "💗 สีชมพู",
+  "👑 เจ้าหญิง",
+  "📅 15 มกราคม 2548"
+];
+
+/* ✨ Sparkle */
+function createSparkle(){
+  const s = document.createElement("div");
+  s.className = "sparkle";
+
+  const centerX = window.innerWidth/2;
+  const centerY = window.innerHeight/2;
+
+  const offsetX = (Math.random()-0.5)*350;
+  const offsetY = (Math.random()-0.5)*350;
+
+  s.style.left = centerX + offsetX + "px";
+  s.style.top = centerY + offsetY + "px";
+
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),2000);
+}
+setInterval(createSparkle,180);
+
+
+/* 💌 Floating text random */
+function createLoveText(){
+  const text = document.createElement("div");
+  text.className = "love-text";
+  text.innerText = loveWords[Math.floor(Math.random()*loveWords.length)];
+
+  text.style.left = (45 + Math.random()*10) + "vw";
+  text.style.top = "65vh";
+
+  document.body.appendChild(text);
+  setTimeout(()=>text.remove(),4000);
+}
+setInterval(createLoveText,1100);
+
+</script>
+
+</body>
+</html>

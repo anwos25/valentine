@@ -348,21 +348,32 @@
   }
 }
 .flower-btn{
-  margin-top:30px;
-  padding:12px 25px;
-  border-radius:30px;
+  display:none;                 /* ซ่อนก่อน */
+  margin:40px auto 20px auto;   /* จัดกลางแนวนอน */
+  padding:14px 30px;
+
   border:none;
-  background: linear-gradient(45deg,#ff6f91,#ff4d6d);
-  color:white;
+  border-radius:30px;
+
   font-family:'Mali', cursive;
-  font-size:16px;
+  font-size:18px;
+  font-weight:600;
+
+  background:linear-gradient(135deg,#ff8fa3,#ff4d6d);
+  color:white;
+
+  box-shadow:0 10px 25px rgba(255,77,109,0.4);
   cursor:pointer;
-  transition:0.3s;
-  box-shadow:0 10px 25px rgba(255,80,120,0.3);
+
+  transition:0.3s ease;
 }
 
 .flower-btn:hover{
   transform:scale(1.08);
+}
+
+.flower-btn.show{
+  display:block;
 }
 
 .flower-section{
