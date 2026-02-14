@@ -44,13 +44,19 @@
         </div>
 
         <div class="text">
-          <span>อุ้มรักแบมที่สุดเยย 💕</span>
-        </div>
+  <span>อุ้มรักแบมที่สุดเยย 💕</span>
+</div>
+
+<button id="flowerBtn" class="flower-btn">
+  ดูดอกไม้ของเรา 🌸
+</button>
+
       </div>
 
-      <p class="hover">เลื่อนข้อความสิ 💕</p>
+      <p class="hover">กดดูข้อความสิจ๊ะ 💕</p>
     </div>
 <div class="floating-hearts"></div>
+
   </div>
 </div>
 
@@ -93,6 +99,25 @@ noBtn.addEventListener("mouseover", moveNoButton);
 noBtn.addEventListener("touchstart", moveNoButton);
 
 </script>
+<script>
+const card = document.querySelector(".valentines-day-card");
+const flowerBtn = document.getElementById("flowerBtn");
+
+flowerBtn.style.display = "none";
+
+card.addEventListener("scroll", () => {
+  if(card.scrollTop + card.clientHeight >= card.scrollHeight - 5){
+    flowerBtn.style.display = "block";
+  }
+});
+
+flowerBtn.addEventListener("click", () => {
+  window.location.href = "flower.html";
+});
+
+</script>
+
 
 </body>
+
 </html>

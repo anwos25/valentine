@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Cosmos ของเรา 🌸</title>
+  <link rel="stylesheet" href="flower.css">
+</head>
+<body>
+
+<div id="castle">
+    
+  <div id="table"></div>
+
+  <div class="shade-wrap hover-animation" id="main">
+    <div id="flower-wrap">
+      <div id="stem"></div>
+      <div id="petal1"></div>
+      <div id="petal2"></div>
+      <div id="petal3"></div>
+      <div id="petal4"></div>
+      <div id="petal5"></div>
+      <div id="falling-petal"></div>
+      <div id="leaf1"></div>
+      <div id="leaf2"></div>
+    </div>
+  </div>
+
+  <div class="shade-wrap" id="sub">
+    <div id="shade-main-reflections"></div>
+    <div id="shade-main">
+      <div id="shade-handle-big"></div>
+      <div id="shade-handle-small"></div>
+      <div id="bottom-shade"></div>
+    </div>
+  </div>
+</div>
+
+<script src="flower.js"></script>
+
+<script>
+(() => {
+
+  const head = document.head;
+  let animationId = 1;
+
+  function createDust(x, y, delay) {
+    const dust = document.createElement("span");
+    dust.className = "dustDef";
+    dust.style.left = x + "px";
+    dust.style.top = y + "px";
+    dust.style.width = "4px";
+    dust.style.height = "4px";
+    dust.style.animation = `sparkle 2s ease-in-out infinite ${delay}s`;
+    document.getElementById("main").appendChild(dust);
+  }
+
+  for(let i = 0; i < 20; i++){
+    createDust(
+      70 + Math.random()*60,
+      130 + Math.random()*120,
+      Math.random()*2
+    );
+  }
+
+})();
+</script>
+
+</body>
+</html>
