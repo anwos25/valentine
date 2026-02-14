@@ -46,6 +46,11 @@ const envelope = document.querySelector(".container");
 envelope.addEventListener("click", function() {
   envelope.classList.toggle("open");
 });
+const letterText = document.querySelector(".text");
+
+letterText.addEventListener("click", function(){
+  letterText.classList.toggle("expanded");
+});
 
 /* 🔥 ความเร็วรัว */
 setInterval(burst,200);
