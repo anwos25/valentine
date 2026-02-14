@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>อุ้มรักแบมมั้ยย</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow: hidden;
+}
+
+#wrapper {
+  text-align: center;
+}
+
+#gif {
+  width: 250px;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #e94d58;
+  margin: 15px 0;
+}
+
+#btn-group {
+  margin-top: 40px;
+}
+
+button {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  color: white;
+  font-size: 1.1em;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 2px solid #e94d58;
+}
+
+#yes-btn {
+  left: calc(50% - 180px);
+  background: #e94d58;
+}
+
+#no-btn {
+  left: calc(50% + 30px);
+  background: white;
+  color: #e94d58;
+}
+</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+  <h2 id="question">แบมรักอุ้มมั้ยย</h2>
+  <img
+       id="gif"
+       src="https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif"
+  />
+  <div id="btn-group">
+    <button id="yes-btn">ร้ากกก</button>
+    <button id="no-btn">ม่ายย</button>
+  </div>
+</div>
+
+<script>
+const question = document.getElementById("question");
+const gif = document.getElementById("gif");
+const yesBtn = document.getElementById("yes-btn");
+const noBtn = document.getElementById("no-btn");
+
+let step = 1;
+
+yesBtn.addEventListener("click", () => {
+
+  if(step === 1){
+    question.innerHTML = "อุ้มรักแบมม้ายย <3";
+    gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+    step = 2;
+  }
+  else {
+    window.location.href = "envelope.html";
+  }
+
+});
+
+function moveNoButton() {
+  const maxX = window.innerWidth - noBtn.offsetWidth;
+  const maxY = window.innerHeight - noBtn.offsetHeight;
+
+  const randomX = Math.floor(Math.random() * maxX);
+  const randomY = Math.floor(Math.random() * maxY);
+
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
+}
+
+noBtn.addEventListener("mouseover", moveNoButton);
+noBtn.addEventListener("touchstart", moveNoButton);
+</script>
+
+</body>
+</html>
