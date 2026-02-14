@@ -5,34 +5,94 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Envelope</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<script>
-document.querySelector(".card").addEventListener("click", function(){
-  window.location.href = "love.html";
-});
-</script>
+
 <body>
 
 <div class="container">
   <div class="envelope"></div>
+
   <div class="card">
-    <h1 class="message">WILL CHU BE MY VALENTINE?</h1>
-    <div class="pikachu">
-      <div class="limbs"></div>
-      <div class="heart"></div>
-      <div class="arms"></div>
-      <div class="smile"></div>
-    </div>
+    <h1 class="message">💕 ถึงแบมคนจ๋วยยย 💕</h1>
+
+    <!-- 💖 รูปแบม -->
+    <img src="bam.jpg" alt="แบม" class="bam-img">
+
   </div>
+
   <div class="cover"></div>
   <div class="lid"></div>
   <div class="shadow"></div>
 </div>
 
+<!-- 💖 VALENTINE POPUP -->
+<div id="valentinePopup" class="valentine-popup">
+  <div class="valentine-wrapper">
+
+    <div class="happy-valentines">
+      <div class="valentines-day-card">
+        <div class="clouds"></div>
+
+        <div class="hearts">
+          <div class="heartOne"><div class="left-side"></div><div class="right-side"></div></div>
+          <div class="heartTwo"><div class="left-side"></div><div class="right-side"></div></div>
+          <div class="heartThree"><div class="left-side"></div><div class="right-side"></div></div>
+          <div class="heartFour"><div class="left-side"></div><div class="right-side"></div></div>
+          <div class="heartFive"><div class="left-side"></div><div class="right-side"></div></div>
+        </div>
+
+        <div class="text">
+          <span>อุ้มรักแบมที่สุดเยย 💕</span>
+        </div>
+      </div>
+
+      <p class="hover">เลื่อนข้อความสิ 💕</p>
+    </div>
 <div class="floating-hearts"></div>
+  </div>
+</div>
 
 <script src="script.js"></script>
+
+<!-- ✅ ย้าย script มาไว้ล่างสุด -->
+<script>
+const popup = document.getElementById("valentinePopup");
+const yesBtn = document.getElementById("yes-btn");
+const noBtn = document.getElementById("no-btn");
+const question = document.getElementById("question");
+const gif = document.getElementById("gif");
+
+document.querySelector(".card").addEventListener("click", function(){
+  popup.style.display = "flex";
+});
+
+let step = 1;
+
+yesBtn.addEventListener("click", () => {
+  if(step === 1){
+    question.innerHTML = "อุ้มรักแบมม้ายย 💘";
+    gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+    step = 2;
+  } else {
+    popup.style.display = "none";
+  }
+});
+
+function moveNoButton() {
+  const maxX = window.innerWidth - noBtn.offsetWidth;
+  const maxY = window.innerHeight - noBtn.offsetHeight;
+
+  noBtn.style.position = "absolute";
+  noBtn.style.left = Math.random()*maxX + "px";
+  noBtn.style.top = Math.random()*maxY + "px";
+}
+
+noBtn.addEventListener("mouseover", moveNoButton);
+noBtn.addEventListener("touchstart", moveNoButton);
+
+</script>
+
 </body>
 </html>

@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>อุ้มรักแบมมั้ยย</title>
 
+<!-- 💖 FONT MALI -->
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
 * {
   margin: 0;
@@ -17,8 +20,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: whitesmoke;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: linear-gradient(135deg,#ffe3ec,#ffd1dc);
+  font-family: 'Mali', cursive;
   overflow: hidden;
 }
 
@@ -28,12 +31,15 @@ body {
 
 #gif {
   width: 250px;
+  margin-top: 10px;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.8em;
   color: #e94d58;
   margin: 15px 0;
+  font-weight: 600;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 #btn-group {
@@ -42,18 +48,24 @@ h2 {
 
 button {
   position: absolute;
-  width: 150px;
-  height: 50px;
-  color: white;
-  font-size: 1.1em;
+  width: 160px;
+  height: 55px;
+  font-size: 1.2em;
   border-radius: 30px;
   cursor: pointer;
   border: 2px solid #e94d58;
+  transition: all 0.2s ease;
+  font-family: 'Mali', cursive;
 }
 
 #yes-btn {
-  left: calc(50% - 180px);
+  left: calc(50% - 190px);
   background: #e94d58;
+  color: white;
+}
+
+#yes-btn:hover {
+  transform: scale(1.1);
 }
 
 #no-btn {
@@ -67,14 +79,14 @@ button {
 <body>
 
 <div id="wrapper">
-  <h2 id="question">แบมรักอุ้มมั้ยย</h2>
+  <h2 id="question">แบมรักอุ้มมั้ยย 💖</h2>
   <img
        id="gif"
        src="https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif"
   />
   <div id="btn-group">
-    <button id="yes-btn">ร้ากกก</button>
-    <button id="no-btn">ม่ายย</button>
+    <button id="yes-btn">ร้ากกก 💕</button>
+    <button id="no-btn">ม่ายย 😝</button>
   </div>
 </div>
 
@@ -89,7 +101,7 @@ let step = 1;
 yesBtn.addEventListener("click", () => {
 
   if(step === 1){
-    question.innerHTML = "อุ้มรักแบมม้ายย <3";
+    question.innerHTML = "อุ้มรักแบมม้ายย 💘";
     gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
     step = 2;
   }
