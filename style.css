@@ -171,11 +171,11 @@ body {
   animation: open-rev 2s;
 }
 
-.container:hover .lid {
+.container.open .lid {
   animation: open 0.5s forwards;
 }
 
-.container:hover .card {
+.container.open .card {
   animation: slide 0.2s 0.5s forwards;
 }
 

@@ -32,6 +32,7 @@ function createHeart(){
   container.appendChild(svg);
 
   setTimeout(()=>svg.remove(),1700);
+  
 }
 
 /* 🔥 spawn หลายดวงต่อครั้ง */
@@ -40,6 +41,11 @@ function burst(){
     createHeart();
   }
 }
+const envelope = document.querySelector(".container");
+
+envelope.addEventListener("click", function() {
+  envelope.classList.toggle("open");
+});
 
 /* 🔥 ความเร็วรัว */
 setInterval(burst,200);
